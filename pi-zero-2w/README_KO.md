@@ -76,11 +76,17 @@ systemctl list-units --type=service --state=running --no-pager
 | `README.md` | 이 문서 |
 | `optimize.sh` | 최적화 일괄 적용 스크립트 |
 | `rollback.sh` | 최적화 일괄 롤백 스크립트 |
-| `rpi-zero2w-setup.md` | 항목별 상세 적용/롤백 가이드 |
 
 ## 주의사항
 
-- 서비스를 개별로 비활성화할 때는 **하나씩 적용 후 SSH 접속을 확인**할 것
 - SSH 접속 불가 시 SD카드를 꺼내 다른 리눅스에서 심볼릭 링크를 복원해야 함
 - `gpu_mem` 최소값은 16MB (라즈베리파이 하드웨어 제한)
 - GPU 메모리, 블루투스 설정 변경은 재부팅 후 적용됨
+
+## 트러블슈팅
+
+### SSH 접속 불가 (ThinkCentre M75q Tiny Gen 5 / Windows 11 / Wi-Fi 환경)
+
+ThinkCentre M75q Tiny Gen 5에서 Wi-Fi만 연결된 상태로 SSH 접속이 안 되는 경우,<br/>
+Windows 설정에서 Wi-Fi를 껐다가 다시 켜면 해결됨.<br/>
+다른 리눅스 장비에서는 정상적으로 접속되므로 Windows Wi-Fi 어댑터 측 문제로 추정.

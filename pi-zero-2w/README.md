@@ -76,11 +76,17 @@ systemctl list-units --type=service --state=running --no-pager
 | `README.md` | This document |
 | `optimize.sh` | Optimization apply script |
 | `rollback.sh` | Optimization rollback script |
-| `rpi-zero2w-setup.md` | Step-by-step apply/rollback guide |
 
 ## Notes
 
-- When disabling services individually, **apply one at a time and verify SSH access**
 - If SSH becomes inaccessible, remove the SD card and restore symlinks from another Linux machine
 - Minimum `gpu_mem` value is 16MB (Raspberry Pi hardware limit)
 - GPU memory and Bluetooth setting changes take effect after reboot
+
+## Troubleshooting
+
+### SSH Connection Failure (ThinkCentre M75q Tiny Gen 5 / Windows 11 / Wi-Fi)
+
+If SSH connection fails from a ThinkCentre M75q Tiny Gen 5 with only Wi-Fi connected,<br/>
+toggling Wi-Fi off and on in Windows Settings resolves the issue.<br/>
+SSH works fine from other Linux machines, so this is likely a Windows Wi-Fi adapter issue.
